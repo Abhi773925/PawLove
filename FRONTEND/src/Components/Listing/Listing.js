@@ -23,7 +23,7 @@ const Listing = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/pets', {
+      const response = await fetch('https://pawlove.onrender.com/pets', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

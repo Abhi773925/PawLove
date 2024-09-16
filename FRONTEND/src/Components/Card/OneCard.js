@@ -13,7 +13,7 @@ const OneCard = () => {
     // Fetch pets from the backend
     const fetchPets = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/pets');
+        const response = await axios.get('https://pawlove.onrender.com/pets');
         setPets(response.data);
       } catch (error) {
         console.error('Error fetching pets:', error);

@@ -24,7 +24,7 @@ const Contact = () => {
     e.preventDefault();
   
     try {
-      const response = await fetch('http://localhost:5000/api/contactRoutes', {
+      const response = await fetch('https://pawlove.onrender.com/api/contactRoutes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

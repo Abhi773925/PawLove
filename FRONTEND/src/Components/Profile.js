@@ -8,7 +8,7 @@ const Profile = ({ user, setIsLoggedIn, setUser }) => {
   const handleLogout = async () => {
     try {
       // Call the logout endpoint on the backend
-      await fetch('http://localhost:5000/logout', {
+      await fetch('https://pawlove.onrender.com/logout', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

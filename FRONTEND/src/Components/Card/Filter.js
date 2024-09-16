@@ -5,7 +5,7 @@ import './Filter.css';
 const Filter = ({ setPets }) => {
   const handleSubmit = async (typeName) => {
     try {
-      const response = await fetch(`http://localhost:5000/pets/filter?type=${typeName}`);
+      const response = await fetch(`https://pawlove.onrender.com/pets/filter?type=${typeName}`);
       const data = await response.json();
       setPets(data);
     } catch (error) {

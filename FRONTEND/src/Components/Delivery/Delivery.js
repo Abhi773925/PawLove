@@ -57,7 +57,7 @@ const Delivery = () => {
     };
   
     try {
-      const response = await fetch('http://localhost:5000/api/delivery', {
+      const response = await fetch('https://pawlove.onrender.com/api/delivery', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
