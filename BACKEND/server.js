@@ -6,14 +6,15 @@ const dotenv = require('dotenv');
 const authRoutes=require('./routes/auth');
 const delivery=require('./routes/delivery');
 const contactRoutes = require('./routes/contactRoutes'); // Import contact routes
-
+const helmet=require("helmet");
 dotenv.config();
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-
+app.use(helmet());
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
