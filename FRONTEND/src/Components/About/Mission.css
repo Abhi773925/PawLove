@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F3F4F6;
+  padding: 20px;
+  padding-left: 120px;
+  padding-right: 120px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  border-collapse: collapse;
+  height: 65vh;
+  animation: fadeIn 1.5s ease-in-out;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.text {
+  flex: 1;
+  max-width: 500px;
+  margin-right: 20px;
+}
+
+.photo {
+  flex: 1;
+  max-width: 500px;
+}
+
+.photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+h1 {
+  color: #1A202C;
+  font-weight: 900;
+  font-size: 8rem;
+  font-family: "Roboto Mono", monospace;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: slideInFromTop 1s ease-out forwards 0.5s;
+  line-height: 1.2;
+}
+
+.ppp {
+  color: #424242;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards 1s;
+  font-weight: 300;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1065px) {
+  .main {
+    flex-direction: column;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .text {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .photo img {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 5rem;
+    line-height: 1.3;
+  }
+
+  .ppp {
+    font-size: 1.55rem;
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .text {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .photo img {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    line-height: 1.4;
+  }
+
+  .ppp {
+    font-size: 1.5rem;
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    height: auto;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.5;
+  }
+
+  .ppp {
+    font-size: 1.25rem;
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 360px) {
+  .main {
+    padding: 5px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 1.6;
+  }
+
+  .ppp {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}

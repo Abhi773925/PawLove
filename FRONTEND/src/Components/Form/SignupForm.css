@@ -1,0 +1,153 @@
+
+.signup-container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px;
+  /* background-color: #FFF3E0; */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navigation-buttons {
+  display: flex;
+  gap: 1rem;
+  background-color: #86c0f9; /* Playful Green */
+  padding: 10px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.account-type-btn {
+  background-color: #2c61eb; /* Soft Fur Cream */
+  color: #FFF;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 1rem;
+}
+
+.account-type-btn.active {
+  background-color: #020e2b; /* Soft Fur Cream */
+  transform: scale(1.05);
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+  max-height: fit-content; /* Adjust this value based on your preference */
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+
+.input-field {
+  background-color: #FFF;
+  border: 2px solid #8D6E63;
+  border-radius: 12px;
+  padding: 14px;
+  padding-right: 40px; 
+  width: 100%;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #060606;
+  box-sizing: border-box;
+}
+
+.label-text {
+  font-size: 0.9rem;
+  color: #080808;
+  margin-bottom: 6px;
+}
+
+.required-asterisk {
+  color: #FFCDD2;
+}
+
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  top:67px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #8D6E63;
+}
+
+.eye-icon svg {
+  vertical-align: middle;
+}
+
+.button-primary {
+  background-color: #2c61eb; /* Soft Fur Cream */
+  color: #FFF;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.button-primary:hover {
+  background-color: #66B03C;
+  transform: scale(1.03);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .signup-container {
+    padding: 15px;
+  }
+
+  .account-type-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .input-field {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .button-primary {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-container {
+    padding: 10px;
+  }
+
+  .account-type-btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+
+  .input-field {
+    padding: 10px;
+    font-size: 0.8rem;
+  }
+
+  .button-primary {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}

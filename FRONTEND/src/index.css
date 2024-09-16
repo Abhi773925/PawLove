@@ -1,0 +1,75 @@
+/* Global Styles */
+body {
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Light Mode Styles (default) */
+body {
+    background-color: #ffffff;
+    color: #000;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #222;
+    color: #EEE;
+}
+
+.dark-mode a {
+    color: #66C0F4;
+}
+
+.dark-mode .top-navigation {
+    background-color: #333;
+}
+
+.dark-mode .nav-links li a {
+    color: #DDD;
+}
+
+.dark-mode .nav-links li a.active-link {
+    background-color: #555;
+}
+
+.dark-mode .search-container {
+    background-color: #444;
+}
+
+.dark-mode .search-input {
+    color: #EEE;
+}
+
+.dark-mode .search-button {
+    background-color: #666;
+}
+
+.dark-mode .search-button:hover {
+    background-color: #777;
+}
+
+.dark-mode .bottom-navigation {
+    background-color: #333;
+}
+
+.dark-mode .nav-icons li a {
+    color: #DDD;
+}
+
+.dark-mode .nav-icons li a.active-link {
+    background-color: #555;
+}
+
+.dark-mode .nav-icons li span {
+    color: #DDD;
+}

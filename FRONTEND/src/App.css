@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+html,
+body {
+    overflow-x: hidden;
+}
+.mainbody
+{
+    /* background-color: #FFF3E0; */
+    height: 100%;
+    width: 100%;
+}
+
+/* Global dark mode styles */
+body.dark-mode {
+    background-color: #222; /* Dark background color for body */
+    color: #EEE; /* Light text color */
+}
+/* Global Styles */
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #222; /* Dark background color for body */
+    color: #EEE; /* Light text color */
+}
+
+.dark-mode .top-navigation {
+    background-color: #333; /* Darker background for navbar */
+}
+
+.dark-mode .nav-links li a {
+    color: #DDD; /* Light text color */
+}
+
+.dark-mode .nav-links li a.active-link {
+    background-color: #555; /* Slightly lighter background for active link */
+}
+
+.dark-mode .search-container {
+    background-color: #555; /* Darker background for search bar */
+}
+
+.dark-mode .search-input {
+    color: #EEE; /* Light text color */
+}
+
+.dark-mode .search-button {
+    background-color: #666; /* Darker background for search button */
+}
+
+.dark-mode .search-button:hover {
+    background-color: #777; /* Darker on hover */
+}
+
+.dark-mode .bottom-navigation {
+    background-color: #333; /* Darker background for bottom navigation */
+}
+
+.dark-mode .nav-icons li a {
+    color: #DDD; /* Light text color */
+}
+
+.dark-mode .nav-icons li a.active-link {
+    background-color: #555; /* Slightly lighter background for active link */
+}
+
+.dark-mode .nav-icons li span {
+    color: #DDD; /* Light text color */
+}

@@ -1,0 +1,9 @@
+.apple{
+    padding-top: 70px;
+    
+}
+.cc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

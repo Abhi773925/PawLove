@@ -1,0 +1,281 @@
+/* Container styling */
+.delivery-form-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  font-family: 'Quicksand', sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+.delivery-form-container:hover {
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+}
+
+/* Left section (Pet info) */
+.pet-info-container {
+  flex: 1;
+  margin-right: 30px;
+  background-color: #f0f4f8;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pet-info {
+  text-align: center;
+}
+
+.pet-info h3 {
+  color: #2D3748;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.pet-image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.pet-image:hover {
+  transform: scale(1.05);
+}
+
+.pet-info pp {
+  font-size: 1rem;
+  color: #4A5568;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* Adjusting Go Back Button under the image */
+.go-back-button {
+  padding: 12px 20px;
+  background-color: #2c61eb;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  display: inline-block;
+  width: 100%; /* Full-width for better spacing */
+}
+
+.go-back-button:hover {
+  background-color: #ce0f0f;
+}
+
+/* Right section (Form) */
+.delivery-form-container .delivery-form {
+  flex: 2;
+  background-color: #edf2f7;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.delivery-form h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #2D3748;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+label {
+  font-size: 1rem;
+  color: #2D3748;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #cbd5e0;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: #3182ce;
+  box-shadow: 0 0 5px rgba(49, 130, 206, 0.5);
+  outline: none;
+}
+
+/* Submit button */
+.submit-button {
+  padding: 14px 25px;
+  background-color: #2c61eb;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #38a169;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .delivery-form-container {
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+  }
+
+  .pet-info-container {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .delivery-form {
+    padding: 20px;
+  }
+
+  .submit-button, .go-back-button {
+    width: 100%;
+  }
+}
+
+
+
+/* Existing styles */
+
+.donation-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.donation-section h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.donation-section p {
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.qr-code {
+ 
+  max-width: 150px;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width:fit-content;
+  height: fit-content%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  padding-top: 30px;
+  text-align: center;
+  width: 60%;
+  max-width: fit-content;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transform: scale(0.9);
+  animation: scaleIn 0.3s ease-in;
+}
+
+/* Modal Header */
+.modal-content h2 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Modal Body */
+.modal-content p {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+
+/* Close Button */
+.close-modal-button {
+  background-color: #ff5c5c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-top: 20px; /* Add margin to create a gap from content */
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.close-modal-button:hover {
+  background-color: #ff3b3b;
+}
+
+/* Animation Keyframes */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Additional Styling */
+.pky {
+  text-align: center;
+}
