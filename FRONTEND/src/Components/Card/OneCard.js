@@ -29,7 +29,7 @@ const OneCard = () => {
         <Filter setPets={setPets} />
         <Cards pets={pets} />
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

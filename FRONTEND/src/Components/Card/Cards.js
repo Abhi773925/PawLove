@@ -31,8 +31,10 @@ const Cards = ({ pets }) => {
     <div className="cards-container">
       {!pets || pets.length === 0 ? (
         <div className="no-data">
-          <p>No Data Found</p>
-        </div>
+        <p>Loading...</p>
+        <div className="loader"></div>  {/* Loader element */}
+    </div>
+    
       ) : (
         pets.map((pet) => (
           <Card

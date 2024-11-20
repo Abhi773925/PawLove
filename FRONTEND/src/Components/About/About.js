@@ -15,7 +15,8 @@ const About = () => {
       <Mission/>
       <Vision/>
       <Goal/>
-      <Team/>
+      {/* <Team/> */}
+      Reach developer - anshkmr991@gmail.com
       <Footer/>
     </div>
     

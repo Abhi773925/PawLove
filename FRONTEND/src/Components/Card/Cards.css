@@ -1,35 +1,58 @@
+/* Cards.css */
+
+/* Make the cards container use flexbox or grid for layout */
 .cards-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  box-sizing: border-box;
-  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap; /* This allows the cards to wrap to the next row */
+  justify-content: center; /* Centers the cards horizontally */
+  gap: 20px; /* Adds space between cards */
+  padding: 20px; /* Optional: adds padding around the container */
+  position: relative; /* To position the loader absolutely inside it */
 }
 
-@media (max-width: 1230px) {
-  .cards-container {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 1024px) {
-  .cards-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .cards-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 750px) {
-  .cards-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
+/* Loader positioning */
 .no-data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* margin-top: 60px !important; */
+  margin-bottom: 50px;
+  transform: translate(-50%, -50%);
   text-align: center;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+/* Loader design */
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3; /* Light gray background */
+  border-top: 5px solid #3498db; /* Blue spinner color */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Keyframes for the spinner animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add a responsive card layout */
+.card {
+  width: 300px; /* Width of each card */
+  height: auto; /* Adjust height based on content */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Slight hover effect */
+}
+
+

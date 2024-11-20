@@ -7,7 +7,7 @@ body {
 
 /* Light Mode Styles (default) */
 body {
-    background-color: #ffffff;
+    background: linear-gradient(to right, #d3f0ff, #B3E0F5, #E6F3FB); 
     color: #000;
 }
 

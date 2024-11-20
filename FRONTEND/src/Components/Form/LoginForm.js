@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
-import './LoginForm.css';
+import "./LoginForm.css";
 
 const LoginForm = (props) => {
   const setIsLoggedIn = props.setIsLoggedIn;
@@ -15,7 +15,7 @@ const LoginForm = (props) => {
   });
 
   function changeHandler(event) {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [event.target.name]: event.target.value,
     }));
@@ -25,13 +25,16 @@ const LoginForm = (props) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://pawlove.onrender.com/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://pawlove.onrender.com/api/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const result = await response.json();
       // console.log(result.user)
@@ -39,7 +42,7 @@ const LoginForm = (props) => {
       if (response.ok) {
         setIsLoggedIn(true);
         toast.success("Login Successful");
-        localStorage.setItem('user', JSON.stringify(result.user));
+        localStorage.setItem("user", JSON.stringify(result.user));
 
         navigate("/dashboard");
       } else {
@@ -70,7 +73,7 @@ const LoginForm = (props) => {
             placeholder="Enter your email address"
             onChange={changeHandler}
             name="email"
-            className="bg-richblack-800 rounded-[0.75rem] w-full p-[12px] text-richcream-5"
+            className=" rounded-[0.75rem] w-full p-[12px] border border-black"
           />
         </label>
 
@@ -87,15 +90,26 @@ const LoginForm = (props) => {
             placeholder="Enter Password"
             onChange={changeHandler}
             name="password"
-            className="bg-richblack-800 rounded-[0.75rem] w-full p-[12px] text-richblack-5"
+            className=" rounded-[0.75rem] w-full p-[12px] border border-black "
           />
 
-          <span onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-[38px] cursor-pointer">
-            {showPassword ? <AiOutlineEyeInvisible fontSize={24} fill='#AFB2BF' /> : <AiOutlineEye fontSize={24} fill='#AFB2BF' />}
+          <span
+            onClick={() => setShowPassword(!showPassword)}
+            className="absolute right-3 top-[50px] cursor-pointer"
+          >
+            {showPassword ? (
+              <AiOutlineEye fontSize={24} fill="#AFB2BF" />
+            ) : (
+              <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
+              
+            )}
           </span>
 
-          <Link to="#">
-            <p className="text-xs mt-1 text-blue-100 max-w-max ml-auto">Forgot Password</p>
+          <Link
+            to="/signup"
+            className="text-[1rem] text-blue-400 transition-colors duration-300 hover:border-white"
+          >
+            Don't have an account? Sign Up
           </Link>
         </label>
 

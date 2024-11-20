@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Delivery.css';
-import qrCodeImage from '../../assets/qrcode.jpg'; // Path to your QR code image
+import qrCodeImage from '../../assets/clientqr.jpg'; // Path to your QR code image
 
 const Delivery = () => {
   const location = useLocation();
@@ -92,7 +92,7 @@ const Delivery = () => {
       {pet && (
         <div className="pet-info-container">
           <div className="pet-info">
-            <h3>Pet Information</h3>
+            <h3>I'm {pet.name}</h3>
             <img src={pet.imgUrl} alt={pet.name} className="pet-image" />
             <p><strong>Name:</strong> {pet.name}</p>
             <p><strong>Breed:</strong> {pet.breed}</p>
@@ -110,7 +110,7 @@ const Delivery = () => {
       )}
 
       <form onSubmit={handleSubmit} className="delivery-form">
-        <h2>Delivery Address</h2>
+        <h2>Your Address</h2>
         <div className="form-group">
           <label htmlFor="name">Full Name</label>
           <input
@@ -195,7 +195,7 @@ const Delivery = () => {
             required
           />
         </div>
-        <button type="submit" className="submit-button">Place Order</button>
+        <button type="submit" className="submit-button">Adopt Now</button>
       </form>
 
       {/* Modal */}
@@ -203,7 +203,7 @@ const Delivery = () => {
         <div className="modal-overlay">
           <div className="modal-content">
             <h2>Thank You!</h2>
-            <p className='pky'>We have received your order and will get back to you within the next 24 hours.</p>
+            <p className='pky'>We have received your message and our team contact you back within the next 24 hours. Thank you!</p>
             <button onClick={handleCloseModal} className="close-modal-button">Close</button>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Contact.css'; // Importing the updated CSS
 import Footer from '../Footer'; // Import your Footer component
-import contact from '../../assets/contact.avif';
+import contact from '../../assets/contactus-img.webp';
 const Contact = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -10,7 +10,7 @@ const Contact = () => {
     message: '',
     privacyPolicy: false,
   });
-
+  const clientMail = "Ar4164677@gmail.com";
   const [submitted, setSubmitted] = useState(false); // New state to track form submission status
 
   const handleChange = (e) => {
@@ -113,19 +113,22 @@ const Contact = () => {
                 required
               />
               <label>
-                I agree to our friendly <a href="/">privacy policy</a>
+                I agree to our friendly privacy policy
               </label>
             </div>
             <button type="submit">Submit</button>
+            <br></br><br></br>
+            <a href={`mailto:${clientMail}`}>Mail me Personally</a>
           </form>
         </div>
+       
         <div className="kawruh-contact-info">
           <img
             src={contact}
-            alt="Person using smartphone"
+            alt="image"
             className="kawruh-contact-image"
           />
-          <div className="kawruh-info-details">
+          {/* <div className="kawruh-info-details">
             <div className="kawruh-info-item">
               <span className="kawruh-info-icon">📧</span>
               <span className="kawruh-info-text">rockabhisheksingh@gmail.com</span>
@@ -134,7 +137,7 @@ const Contact = () => {
               <span className="kawruh-info-icon">📞</span>
               <span className="kawruh-info-text">+91 7739254874</span>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       {/* Adding space between the contact form and the footer */}

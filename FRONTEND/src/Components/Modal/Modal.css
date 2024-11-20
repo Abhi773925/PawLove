@@ -14,11 +14,11 @@
 
 .modall-content {
   position: relative;
-  background: linear-gradient(135deg, #ffffff, #f0f4f8);
+  background: linear-gradient(135deg, #bbe4f1, #52687e);
   padding: 20px;
   border-radius: 12px;
   max-width: 90vw;
-  width: 100%;
+  width: 60%;
   max-height: 90vh;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   overflow-y: auto;
@@ -111,4 +111,66 @@ strong {
   p {
     font-size: 0.9rem;
   }
+}
+
+
+.aa {
+  border: 1px solid #e0e0e0;  /* Soft border to make it look more subtle */
+  margin: 15px 0;
+  padding: 12px;
+  font-size: 1.1rem;  /* Slightly larger font for readability */
+  line-height: 1.8;  /* Improved line height for better readability */
+  color: #333;  /* Darker text color for contrast */
+  background-color: #fafafa;  /* Light background to make text pop */
+  border-radius: 8px;  /* Rounded corners for a softer look */
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);  /* Soft shadow for a floating effect */
+  transition: all 0.3s ease;  /* Smooth transition for hover effect */
+}
+
+.aa strong {
+  font-weight: 600;
+  color: #007bb5;  /* Accent color for strong text (like titles) */
+}
+
+.aa:hover {
+  background-color: #f1f1f1;  /* Slightly darker background on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);  /* Slightly stronger shadow on hover */
+}
+
+.aa p {
+  margin: 5px 0;  /* Space out individual paragraphs */
+}
+
+.adoption {
+  background-color: #007bb5; /* Bright blue for the button background */
+  color: #fff; /* White text for contrast */
+  border: none; /* Remove default border */
+  padding: 12px 25px; /* Padding for the text to make the button larger */
+  font-size: 0.5rem; /* Increase font size for better visibility */
+  font-weight: bold; /* Make the text stand out */
+  border-radius: 25px; /* Rounded corners */
+  cursor: pointer; /* Show pointer cursor on hover */
+  text-transform: uppercase; /* Capitalize text for emphasis */
+  transition: all 0.3s ease; /* Smooth transition for hover and focus effects */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  outline: none; /* Remove default outline */
+  margin-top: 20px; /* Add some space above the button */
+}
+
+.adoption:hover {
+  background-color: #005f8d; /* Darker blue when hovered */
+  transform: scale(1.05); /* Slight zoom effect to indicate interactivity */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.adoption:active {
+  background-color: #00466d; /* Even darker blue when the button is clicked */
+  transform: scale(1); /* Reset the scale after click */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Return to default shadow */
+}
+
+.adoption:focus {
+  outline: 3px solid #ffcc00; /* Bright outline when the button is focused */
+  outline-offset: 2px; /* Slightly offset the outline */
 }

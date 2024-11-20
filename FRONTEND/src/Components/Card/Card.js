@@ -24,8 +24,8 @@ const Card = ({ pet, onViewProfile, onAdopt }) => {
         <p className='abc'>{pet.title}</p>
         <p className='brief-detail'>{pet.briefDetail}</p>
         <div className="card-buttons">
-          <button onClick={onViewProfile}>View Profile</button>
-          <button className="adoption" onClick={handleAdoptClick}>Adopt Now</button>
+          <button onClick={onViewProfile} className='view-profile-btn'>View Profile</button>
+          <button className="adopt-now-btn" onClick={handleAdoptClick}>Adopt Now</button>
         </div>
       </div>
     </div>

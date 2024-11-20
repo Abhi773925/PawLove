@@ -34,7 +34,7 @@ const Modal = ({ pet, onClose }) => {
     <div className="modal-overlay" aria-labelledby="modal-title" aria-hidden="true">
       <div className="modall-content">
         <button className="close-button" onClick={onClose} aria-label="Close modal">&times;</button>
-        <h2 id="modal-title">{pet.name}</h2>
+        <h2 id="modal-title">Meet {pet.name}</h2>
         <img src={pet.imgUrl} alt={pet.name} className="modal-image" />
         <button className="adoption" onClick={ handleAdoptClick}>Adopt Now</button>
         <p className='aa'><strong>Breed:</strong> {pet.breed}</p>

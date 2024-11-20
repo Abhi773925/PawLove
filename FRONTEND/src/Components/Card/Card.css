@@ -1,165 +1,146 @@
+/* Card style */
 .card {
-  background-color: #f9fafb;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  flex: 1 1 calc(20% - 2rem);
-  max-width: calc(20% - 2rem);
-  margin: 1rem 0;
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
+  background-color: #e1e1e1 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  overflow: hidden !important;
+  width: 100% !important;  /* Make the card width 100% of its parent container */
+  max-width: 300px !important;  /* Limit the card's max width */
+  padding: 20px !important;  /* Add padding inside the card */
+  margin: 10px !important;  /* Add margin between cards */
+  box-sizing: border-box !important;  /* Ensure padding does not affect width */
+}
+
+/* Wrapper or container that holds the cards - Switch to Flexbox layout */
+.card-wrapper {
+  display: flex !important;
+  flex-wrap: wrap !important;  /* Allow cards to wrap onto new rows */
+  justify-content: space-between !important;  /* Space between cards */
+  gap: 20px !important;  /* Spacing between the cards */
+  padding: 20px !important;  /* Padding around the container */
+  max-width: 1200px !important;  /* Limit the container's max width */
+  margin: 0 auto !important;  /* Center the container */
+}
+
+/* Ensure each card takes 100% width on smaller screens */
+@media (max-width: 768px) {
+  .card-wrapper {
+    justify-content: center !important;  /* Center cards */
+  }
+
+  .card {
+    width: 100% !important;  /* Cards take up full width on smaller screens */
+    max-width: none !important;  /* Remove max-width on small screens */
+    margin-bottom: 20px !important;  /* Ensure margin between cards */
+  }
+}
+
+/* For very small screens (below 480px) - One card per row */
+@media (max-width: 480px) {
+  .card-wrapper {
+    flex-direction: column !important;  /* Stack cards vertically */
+    align-items: center !important;  /* Center the cards */
+  }
+
+  .card {
+    width: 100% !important;  /* Full width card */
+    max-width: none !important;  /* Remove max-width restriction */
+    margin-bottom: 20px !important;  /* Bottom margin for spacing between cards */
+  }
+}
+
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .card-image img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 10px;
+  border-bottom: 1px solid #170e0e;
 }
 
 .card-content {
-  padding: 1rem;
-  text-align: center;
-  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
-.card-content p:first-child {
+.abc {
+  font-size: 20px;
   font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #2C3E50;
+  color: #333;
+  margin-bottom: 8px;
 }
 
-.anku {
-  color: #424242;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1rem;
-  line-height: 1.8;
-  opacity: 0;
-  animation: fadeIn 1.5s ease-in forwards 1s;
-  font-weight: 300;
+.brief-detail {
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 16px;
+  flex-grow: 1;
 }
 
 .card-buttons {
   display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
-  gap: 10px;
-  flex-shrink: 0;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 12px;
+  margin-top: 16px; /* Space between the content and buttons */
 }
 
 .card-buttons button {
-  background-color: #2563EB;
-  color: white;
+  width: 100%;  /* Ensure buttons fill the container */
+  height: 40px;  /* Set fixed height for equal button size */
+  padding: 0 16px;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;  /* Rounded corners for a smooth glassmorphism effect */
+  font-size: 14px;
   cursor: pointer;
-  flex: 1;
-  min-height: 40px;
-  font-size: 0.8rem;
-  padding-bottom: 0px;
+  color: #ffffff;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.card-buttons button:hover {
-  background-color: #1D4ED8;
+.adoption {
+  background-color: #28a745;
+  color: white;
 }
 
-.card-buttons .t {
-  font-size: small;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 35px;
-  width: 80px;
+.card-buttons button:focus {
+  outline: none;
 }
 
-@media (max-width: 1200px) {
-  .card {
-    flex: 1 1 calc(25% - 2rem);
-    max-width: calc(25% - 2rem);
-  }
-  .card-buttons {
-    height: 35px;
-    width: 100%;
-  }
+.card-buttons button:active {
+  transform: scale(0.98);
 }
 
-@media (max-width:1025px) {
-  .brief-detail {
-    font-size: 20px;
-  }
+/* Glassmorphism effect on both buttons */
+.view-profile-btn, .adopt-now-btn {
+  background: rgba(255, 255, 255, 0.1);  /* Transparent white background */
+  backdrop-filter: blur(2px);  /* Apply blur to the background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);  /* Soft shadow for depth */
+  border: 1px solid rgba(255, 255, 255, 0.3);  /* Subtle border for clarity */
 }
 
-@media (max-width: 992px) {
-  .card {
-    flex: 1 1 calc(33.33% - 2rem);
-    max-width: calc(33.33% - 2rem);
-  }
-  .card-buttons {
-    height: 55px;
-    width: 100%;
-  }
-  .brief-detail {
-    font-size: 20px;
-  }
+/* Linear gradient effect for background */
+.view-profile-btn {
+  background: linear-gradient(45deg, rgba(0, 123, 255, 0.8), rgba(0, 94, 185, 0.8));  /* Gradient blue background */
 }
 
-@media (max-width: 873px) {
-  .card {
-    flex: 1 1 calc(33.33% - 2rem);
-    max-width: calc(33.33% - 2rem);
-  }
-  .brief-detail {
-    font-size: small;
-  }
-  .card-buttons {
-    padding-left: 0;
-    height: 50px;
-    width: 100%;
-  }
+.adopt-now-btn {
+  background: linear-gradient(45deg, rgba(40, 167, 69, 0.8), rgba(28, 140, 42, 0.8));  /* Gradient green background */
 }
 
-@media (max-width: 768px) {
-  .card {
-    flex: 1 1 calc(50% - 2rem);
-    max-width: calc(50% - 2rem);
-  }
-
-  .card-content p:first-child {
-    font-size: 1rem;
-  }
-
-  .card-buttons button {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.7rem;
-  }
+/* Hover effects for both buttons */
+.view-profile-btn:hover {
+  background-color: rgba(0, 94, 185, 0.9);  /* Darker blue on hover */
 }
 
-@media (max-width: 480px) {
-  .card {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-
-  .card-content p:first-child {
-    font-size: 0.9rem;
-  }
-
-  .card-buttons {
-    margin-top: 0.1rem;
-    flex-direction: column;
-  }
-
-  .card-buttons button {
-    width: 100%;
-    margin-bottom: -7px;
-  }
-
-  .card-image img {
-    height: 130px;
-  }
-
-  .brief-detail {
-    display: none;
-  }
+.adopt-now-btn:hover {
+  background-color: rgba(28, 140, 42, 0.9);  /* Darker green on hover */
 }

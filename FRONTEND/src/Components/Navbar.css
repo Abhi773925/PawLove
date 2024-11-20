@@ -11,7 +11,28 @@
 .dark-mode {
     background-color: #333; /* Dark background color */
 }
-
+/* Basic styles for the .nav-login button */
+.nav-login {
+    font-size: 1.2rem;            /* Font size */
+    font-weight: 500;             /* Medium font weight */
+    border: 2px solid black;     /* Black border (make sure it’s thick enough) */
+    padding: 10px 24px;          /* Padding inside the button (vertical 10px, horizontal 24px) */
+    margin-right: 16px;          /* Margin on the right */
+    background-color: transparent; /* Transparent background */
+    color: black;                /* Text color */
+    cursor: pointer;            /* Pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transition for background, text, and border */
+    outline: none;               /* Remove outline on focus */
+  }
+  
+  /* Hover effect for the .nav-login button */
+  .nav-login:hover {
+    background-color: rgb(0, 123, 164);     /* Background becomes black on hover */
+    color: white;                /* Text color becomes white on hover */
+    border-color: white;         /* Change border color to white on hover */
+  }
+  
+  
 
 /* Standard Navigation for Larger Screens */
 .top-navigation {
@@ -19,17 +40,46 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem;
-    /* background-color: #8D6E63;  */
-    /* background-color: #2c3e50; */
-    background:linear-gradient(to right,#46d1ff,#005cdf);
+    background: linear-gradient(to right, rgba(122, 173, 190, 0.4), rgba(69, 143, 247, 0.4));  /* Light, semi-transparent gradient */
+    backdrop-filter: blur(40px);  /* Apply blur effect */
     width: 100%;
     box-sizing: border-box;
     z-index: 10000;
+    border-radius: 8px;  /* Optional: Add some rounding to the corners */
+    border: 1px solid rgba(255, 255, 255, 0.2);  /* Optional: subtle border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Optional: slight shadow for depth */
 }
 
-.text{
-    font-weight: 900;
-    font-size: 1.5rem;
+/* Base style for text */
+.text {
+    font-weight: 500;
+    font-size: 1.3rem;
+    position: relative; /* Needed for the pseudo-element */
+    text-decoration: none; /* Remove the default underline */
+    color: #333; /* Text color */
+    transition: font-weight 0.3s ease; /* Smooth transition for font-weight */
+}
+
+/* Underline animation using the ::after pseudo-element */
+.text::after {
+    content: ''; /* No text, just a line */
+    position: absolute;
+    bottom: 0; /* Position it just below the text */
+    left: 0;
+    width: 0%; /* Start with no width */
+    height: 2px; /* Thickness of the underline */
+    background-color: white; /* Underline color */
+    transition: width 0.3s ease; /* Animate the width */
+}
+
+/* Hover effect */
+.text:hover {
+    font-weight: 540; /* Change font weight on hover */
+}
+
+/* Reveal the underline on hover */
+.text:hover::after {
+    width: 100%; /* Expand the underline to full width */
 }
 
 .nav-container {
@@ -216,7 +266,23 @@
     }
 }
 
-
+/* Profile image container styling */
+.profile-image {
+    margin-right: 30px;
+    width: 50px; /* Size of the circular container */
+    height: 50px;
+    background-color: #007bff; /* Background color for the profile circle */
+    color: white; /* Text (first letter) color */
+    font-size: 24px; /* Font size of the letter */
+    font-weight: bold; /* Make the letter bold */
+    display: flex;
+    align-items: center; /* Vertically center the letter */
+    justify-content: center; /* Horizontally center the letter */
+    border-radius: 50%; /* Makes the container circular */
+    text-transform: uppercase; /* Ensure the letter is uppercase */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Optional: adds a soft shadow around the circle */
+  }
+  
 
 
 .profile-menu {
@@ -271,16 +337,12 @@
     cursor: pointer;
     transition: background 0.3s ease;
   }
-  
-  .profile-menu-item:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-  }
+
   
   .profile-name {
     font-weight: bold;
     font-size: 1rem;
-    color: white;
+    color: rgb(255, 255, 255);
   }
   
   .profile-email {
@@ -293,7 +355,7 @@
   .profile-menu-item a {
     font-size: 0.9rem;
     font-weight: bold;
-    color: white;
+    color: rgb(0, 0, 0);
     background: none;
     border: none;
     cursor: pointer;

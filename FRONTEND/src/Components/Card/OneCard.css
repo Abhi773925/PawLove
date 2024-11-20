@@ -1,6 +1,3 @@
 .home-footer{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
+    max-width: 100vw;
 }

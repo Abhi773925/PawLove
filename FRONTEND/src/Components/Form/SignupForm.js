@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import './SignupForm.css';
+import "./SignupForm.css";
 
 const SignupForm = (props) => {
   const setIsLoggedIn = props.setIsLoggedIn;
@@ -20,7 +20,7 @@ const SignupForm = (props) => {
   });
 
   function changeHandler(event) {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [event.target.name]: event.target.value,
     }));
@@ -34,16 +34,19 @@ const SignupForm = (props) => {
     }
 
     try {
-      const response = await fetch("https://pawlove.onrender.com/api/auth/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          accountType,
-        }),
-      });
+      const response = await fetch(
+        "https://pawlove.onrender.com/api/auth/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...formData,
+            accountType,
+          }),
+        }
+      );
 
       const result = await response.json();
 
@@ -65,13 +68,17 @@ const SignupForm = (props) => {
       <div className="navigation-buttons">
         <button
           onClick={() => setAccountType("User")}
-          className={`account-type-btn ${accountType === "User" ? "active" : ""}`}
+          className={`account-type-btn ${
+            accountType === "User" ? "active" : ""
+          }`}
         >
           User
         </button>
         <button
           onClick={() => setAccountType("Admin")}
-          className={`account-type-btn ${accountType === "Admin" ? "active" : ""}`}
+          className={`account-type-btn ${
+            accountType === "Admin" ? "active" : ""
+          }`}
         >
           Admin
         </button>
@@ -81,7 +88,9 @@ const SignupForm = (props) => {
         <div className="form-fields">
           <div className="flex gap-x-4">
             <label className="w-full">
-              <p className="label-text">First Name <sup className="required-asterisk">*</sup></p>
+              <p className="label-text">
+                First Name <sup className="required-asterisk">*</sup>
+              </p>
               <input
                 type="text"
                 required
@@ -94,7 +103,9 @@ const SignupForm = (props) => {
             </label>
 
             <label className="w-full">
-              <p className="label-text">Last Name <sup className="required-asterisk">*</sup></p>
+              <p className="label-text">
+                Last Name <sup className="required-asterisk">*</sup>
+              </p>
               <input
                 type="text"
                 required
@@ -108,7 +119,9 @@ const SignupForm = (props) => {
           </div>
 
           <label className="w-full">
-            <p className="label-text">Email Address <sup className="required-asterisk">*</sup></p>
+            <p className="label-text">
+              Email Address <sup className="required-asterisk">*</sup>
+            </p>
             <input
               type="email"
               required
@@ -122,7 +135,9 @@ const SignupForm = (props) => {
 
           <div className="flex gap-x-4">
             <label className="w-full relative">
-              <p className="label-text">Create Password <sup className="required-asterisk">*</sup></p>
+              <p className="label-text">
+                Create Password <sup className="required-asterisk">*</sup>
+              </p>
               <input
                 type={showCreatePass ? "text" : "password"}
                 required
@@ -137,15 +152,17 @@ const SignupForm = (props) => {
                 className="eye-icon"
               >
                 {showCreatePass ? (
-                  <AiOutlineEyeInvisible fontSize={24} />
-                ) : (
                   <AiOutlineEye fontSize={24} />
+                ) : (
+                  <AiOutlineEyeInvisible fontSize={24} />
                 )}
               </span>
             </label>
 
             <label className="w-full relative">
-              <p className="label-text">Confirm Password <sup className="required-asterisk">*</sup></p>
+              <p className="label-text">
+                Confirm Password <sup className="required-asterisk">*</sup>
+              </p>
               <input
                 type={showConfirmPass ? "text" : "password"}
                 required
@@ -160,9 +177,9 @@ const SignupForm = (props) => {
                 className="eye-icon"
               >
                 {showConfirmPass ? (
-                  <AiOutlineEyeInvisible fontSize={24} />
-                ) : (
                   <AiOutlineEye fontSize={24} />
+                ) : (
+                  <AiOutlineEyeInvisible fontSize={24} />
                 )}
               </span>
             </label>
