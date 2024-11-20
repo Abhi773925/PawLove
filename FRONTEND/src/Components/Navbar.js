@@ -190,6 +190,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                       onClick={() => {
                         setIsLoggedIn(false);
                         toast.success("Logged out successfully");
+                        localStorage.clear();
                       }}
                     />
                     <span>Logout</span>
